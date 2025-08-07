@@ -1,4 +1,3 @@
-import React from 'react';
 import GlassButton from './components/Button';
 
 const LagdonHomepage = () => {
