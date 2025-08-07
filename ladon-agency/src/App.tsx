@@ -1,22 +1,31 @@
 import GlassButton from "./components/Button";
 import chariotImage from "./assets/chariot.png";
 import logoImage from "./assets/logomoyen.png";
+import backgroundImage from "./assets/background.png";
 
 const LadonHomepage = () => {
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Background gradient effects - plus fidèle à l'original */}
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
+        {/* Overlay sombre pour maintenir la lisibilité */}
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
+
+      {/* Background gradient effects - par-dessus l'image */}
       <div className="absolute inset-0">
         {/* Effet principal vert émeraude au centre-droite */}
-        <div className="absolute top-1/2 right-1/3 transform translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-emerald-400/30 via-emerald-500/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 right-1/3 transform translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-emerald-400/20 via-emerald-500/15 to-transparent rounded-full blur-3xl"></div>
         {/* Effet secondaire plus sombre */}
-        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-teal-600/20 via-emerald-800/15 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-teal-600/15 via-emerald-800/10 to-transparent rounded-full blur-3xl"></div>
       </div>
 
       {/* Header avec effet glassmorphism */}
       <header className="relative z-10 px-8 py-6">
         <div className="max-w-7xl mx-auto flex items-center">
-          {/* Logo - exactement comme sur l'image */}
           {/* Logo - exactement comme sur l'image */}
           <div className="flex items-center space-x-2">
             <img 
@@ -122,8 +131,8 @@ const LadonHomepage = () => {
         </div>
       </main>
 
-      {/* Gradient overlay pour plus de profondeur */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/40 pointer-events-none"></div>
+      {/* Gradient overlay pour plus de profondeur - ajusté pour l'image de fond */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-black/30 pointer-events-none"></div>
     </div>
   );
 };
