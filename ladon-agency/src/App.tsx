@@ -22,7 +22,7 @@ const LagdonHomepage = () => {
             <span className="text-xs text-gray-400 font-medium tracking-wider">AGENCY</span>
           </div>
 
-          {/* Navigation avec vrais boutons glass */}
+          {/* Navigation avec vrais botons glass */}
           <nav className="hidden md:flex space-x-4">
             {['Notre philosophie', 'Nos offres', 'Prendre RDV', 'Contact'].map((item, index) => (
               <GlassButton 
