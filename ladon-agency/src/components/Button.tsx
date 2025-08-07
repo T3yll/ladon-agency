@@ -3,7 +3,7 @@ import React from 'react';
 interface GlassButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  variant?: 'nav' | 'primary' | 'glass' | 'dark';
+  variant?: 'nav' | 'primary' | 'glass' | 'dark' | 'white';
   size?: 'nav' | 'sm' | 'md' | 'lg';
   disabled?: boolean;
   className?: string;
@@ -71,6 +71,18 @@ const GlassButton: React.FC<GlassButtonProps> = ({
       before:bg-gradient-to-r before:from-white/5 before:to-transparent 
       before:opacity-0 hover:before:opacity-100 
       before:transition-opacity before:duration-300
+    `,
+    white: `
+      bg-white 
+      hover:bg-gray-50
+      text-black 
+      shadow-lg 
+      hover:shadow-xl 
+      border-0
+      before:absolute before:inset-0 
+      before:bg-gradient-to-r before:from-gray-100/50 before:to-transparent 
+      before:opacity-0 hover:before:opacity-100 
+      before:transition-opacity before:duration-300
     `
   };
   
@@ -78,7 +90,7 @@ const GlassButton: React.FC<GlassButtonProps> = ({
     nav: "px-6 py-3 text-sm",
     sm: "px-6 py-3 text-sm",
     md: "px-8 py-4 text-base",
-    lg: "px-10 py-5 text-lg font-semibold"
+    lg: "px-18 py-3 text-lg font-semibold"
   };
   
   const disabledStyles = disabled 
@@ -104,10 +116,3 @@ const GlassButton: React.FC<GlassButtonProps> = ({
 };
 
 export default GlassButton;
-
-// Pour un effet glassmorphism encore plus prononcé, tu peux aussi ajouter cette classe CSS :
-// .glass-effect {
-//   backdrop-filter: blur(16px) saturate(180%);
-//   background: rgba(255, 255, 255, 0.05);
-//   border: 1px solid rgba(255, 255, 255, 0.1);
-//   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
